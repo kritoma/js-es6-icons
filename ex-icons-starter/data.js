@@ -1,4 +1,4 @@
-[
+const icons = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,36 @@
 		color: 'blue'
 	}
 ];
+
+const container = document.querySelector(".container");
+const tplIcons = document.querySelector("#tpl-icons");
+for (let i = 0; i < icons.length; i++) {
+	// const iconHTML = tplIcons.cloneNode(true);
+	// const {name, prefix, type, family, color} = icons[i];
+
+	// iconHTML.document.querySelector(".font").classList(`${prefix}solid ${prefix}${name}`);
+	// iconHTML.document.querySelector(".name").innerHTML = name;
+	// iconHTML.document.querySelector(".icon").innerHTML = type;
+	// iconHTML.document.querySelector(".icon").innerHTML = family;
+	// iconHTML.document.querySelector(".icon").innerHTML = color;
+	const iconHTML = `
+		<div class="icon">
+            <i class="${icons[i].prefix}solid ${icons[i].prefix}${icons[i].name}"></i>
+            <span class="name">${icons[i].name}</span>
+        </div>
+	`
+	container.innerHTML += iconHTML;
+};
+
+const select = document.querySelector("#sl-icons");
+select.addEventListener("change", 
+	function() {
+		let option = document.querySelectorAll("option").value;
+		if(option === "animal") {
+			
+		}
+	}
+
+)
+
+
